@@ -1,38 +1,38 @@
 const questions = [
   {
-    question: "question goes here",
+    question: "What is the primary purpose of a CPU ?",
     answers: [
-      { text: "answer1", correct: true },
-      { text: "answer1", correct: false },
-      { text: "answer1", correct: false },
-      { text: "answer1", correct: false },
+      { text: "A) Storing data", correct: false },
+      { text: "B) Executing instructions", correct: true },
+      { text: "C) Displaying graphics", correct: false },
+      { text: "D) Connecting to the internet", correct: false },
     ]
   },
   {
-    question: "question goes here",
+    question: "Which of the following programming languages is primarily used for building dynamic web applications?",
     answers: [
-      { text: "answer1", correct: false },
-      { text: "answer1", correct: false },
-      { text: "answer1", correct: false },
-      { text: "answer1", correct: true },
+      { text: "A) C++", correct: false },
+      { text: "B) Java", correct: false },
+      { text: "C) Python", correct: false },
+      { text: "D) JavaScript", correct: true },
     ]
   },
   {
-    question: "question goes here",
+    question: "What is the function of RAM (Random Access Memory) in a computer system?",
     answers: [
-      { text: "answer1", correct: false },
-      { text: "answer1", correct: true },
-      { text: "answer1", correct: false },
-      { text: "answer1", correct: false },
+      { text: "A) Long-term storage of data", correct: false },
+      { text: "B) Running the operating system", correct: false},
+      { text: "C) Temporary storage of data and program instructions", correct: true},
+      { text: "D) Connecting peripheral devices", correct: false },
     ]
   },
   {
-    question: "question goes here",
+    question: "Which technology is used for wireless communication over short distances between devices like smartphones, laptops, and IoT devices?",
     answers: [
-      { text: "answer1", correct: false },
-      { text: "answer1", correct: true },
-      { text: "answer1", correct: false },
-      { text: "answer1", correct: false },
+      { text: "A) Ethernet", correct: false },
+      { text: "B) Bluetooth", correct: true },
+      { text: "C) Fiber optics", correct: false },
+      { text: "D) DSL", correct: false },
     ]
   }
 ];
@@ -97,7 +97,7 @@ function selectAnswer(e){
 
 function showScore(){
     resetState();
-    questionEliment.innerHTML = 'you scored ${score} out of ${questions.length}';
+    questionEliment.innerHTML = `You scored ${score} out of ${questions.length}`
     nextButton.innerHTML = "Play Again!";
     nextButton.style.display = "block";
 }
