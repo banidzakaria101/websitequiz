@@ -87,7 +87,7 @@ body{
     width: 100%;
     border: none;
     padding: 15px;
-    margin: 10px;
+    margin: 10px auto;
     text-align: left;
     border-radius: 5px;
     cursor: pointer;
@@ -104,7 +104,7 @@ body{
     cursor: no-drop;
 }
 
-#next-btn{
+#next-button{
     background: rgb(128, 44, 156);
     color: aliceblue;
     font-weight: 500;
@@ -125,3 +125,37 @@ body{
 .false{
     background: rgb(241, 86, 86);
 } 
+
+/* CSS for tablets (landscape) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .app {
+      width: 80%;
+      margin: 8% auto;
+    }
+    .header {
+      padding: 15px;
+    }
+    .navbar a {
+      margin: 10px 0;
+    }
+  }
+  
+  /* CSS for phones */
+  @media (max-width: 767px) {
+    .app {
+      width: 90%;
+      margin: 10% 5% 5% 5%;
+    }
+    .header {
+      padding: 10px;
+    }
+    .logo {
+      font-size: 18px;
+    }
+    .quiz h2 {
+      font-size: 18px;
+    }
+    .btn {
+      font-size: 16px;
+    }
+  }

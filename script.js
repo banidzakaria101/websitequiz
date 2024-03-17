@@ -53,6 +53,7 @@ function startQuiz(){
 }
 
 function showQuestion(){
+    resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNumber = currentQuestionIndex + 1;
     questionEliment.innerHTML = questionNumber + "." + currentQuestion.question
@@ -66,7 +67,6 @@ function showQuestion(){
             button.dataset.correct = answer.correct;
         }
         button.addEventListener("click", selectAnswer);
-
     });
 }
 
@@ -82,10 +82,43 @@ function selectAnswer(e){
     const isCorrect = selectedAns.dataset.correct === "true";
     if(isCorrect){
         selectedAns.classList.add("correct");
+        score ++;
     }else{
         selectedAns.classList.add("false");
     }
+    Array.from(answerButtons.children).forEach(button =>{
+        if(button.dataset.correct === "true"){
+           button.classList.add("correct");
+        }
+        button.disabled = true;
+    });
+    nextButton.style.display = "block";
 }
+
+function showScore(){
+    resetState();
+    questionEliment.innerHTML = 'you scored ${score} out of ${questions.length}';
+    nextButton.innerHTML = "Play Again!";
+    nextButton.style.display = "block";
+}
+
+function handleNextButton(){
+    currentQuestionIndex ++;
+    if(currentQuestionIndex < questions.length){
+        showQuestion();
+    }else{
+        showScore();
+    }
+}
+
+
+nextButton.addEventListener("click", () => {
+    if(currentQuestionIndex < questions.length){
+        handleNextButton();
+    }else{
+        startQuiz();
+    }
+})
 
 startQuiz()
 
